@@ -1,0 +1,18 @@
+Historial de Cambios:
+-V.0.1:
+páginas principales y entrelazamiento (core, cliente, producto).
+menú con estilo de bootstrap(core/templates/core/base.html).
+modelos básicos con datos de odoo (cliente, producto).
+-V.0.2:
+visualización de tablas en listar (cliente, producto)
+formulario en html (cliente, producto)
+eliminar y editar datos (cliente, producto)
+-V.0.3:
+eliminar y editar datos (cliente, producto)
+creación del módulo “ventas”
+listar factura
+-ERROR V.0.2
+cliente listas no se puede acceder y no se por que, sin embargo sí que se puede eliminar y editar si sabes poner la url (http://127.0.0.1:8000/clientes/delete/1 o http://127.0.0.1:8000/clientes/edit/1/) tanbien se puede añadir (http://127.0.0.1:8000/clientes/create/) (solucionado)
+-ERROR V.0.3
+el ver una factura no recupera las líneas
+

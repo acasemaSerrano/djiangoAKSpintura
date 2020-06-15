@@ -1,0 +1,42 @@
+{% extends "core/base.html"%}
+{% block title %} Clientes {% endblock %}
+{% block content %}
+    <h1> listar clientes </h1>
+
+    <div class="table-responsive-sm">
+        <table class="table table-striped table-light text-dark table-hover table-bordered">
+            <thead class="thead-inverse thead-dark">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">País</th>
+                    <th scope="col">¿Es una empresa?</th>
+                    <th scope="col"></th>     
+                </tr>
+            </thead>
+     
+            <tbody>
+                {% if object_list %}
+                    {% for cliente in object_list %}
+                        <tr>
+                            <th scope="row">{{ cliente.id }}</th>
+                            <td>{{ cliente.name }}</td>
+                            <td>{{ cliente.surname }}</td>
+                            <td>{{ cliente.phone }}</td>
+                            <td>{{ cliente.country.country_name }}</td>
+                            <td>{{ cliente.is_company }}</td>
+                            <td>
+                                 <a class="btn btn-primary" href="{% url 'client_edit' cliente.id %}">Editar</a>
+                                 <a class="btn btn-primary" href="{% url 'client_delete' cliente.id %}">Eliminar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                   <h1> Ha habido algun error o no hay datos a mostrar </h1>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "core/base.html"%}
+{% block title %} factura {% endblock %}
+{% block content %}
+    <h1> ver factura  {{ factura.id }}</h1>
+    <div class="container">
+        <h2> cliente: {{ factura.cliente }} </h2>
+        <h2> fecha: {{ factura.date }} </h2>
+    </div>
+    <div class="table-responsive-sm">
+        <table class="table table-striped table-light text-dark table-hover table-bordered">
+            <thead class="thead-inverse thead-dark">
+                <tr>
+                        <th scope="col"></th>
+                        <th scope="col">nombre</th>
+                        <th scope="col">codigo</th>
+                        <th scope="col">descripcion</th>
+                </tr>
+            </thead>
+     
+            <tbody>
+                <tr>
+                    <th scope="row">0</th>
+                    <th scope="row">nombre</th>
+                    <th scope="row">12342</th>
+                    <th scope="row">haqui esta el error al no poder recuperrar la lista</th>
+                </tr>
+                {% for Producto in factura.producto_set.all %}
+                    <tr>
+                        <th scope="row">{{ Product.id }}</th>
+                        <th scope="row">{{ Product.name }}</th>
+                        <th scope="row">{{ Product.code }}</th>
+                        <th scope="row">{{ Product.description }}</th>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </div>
+{% endblock %}
